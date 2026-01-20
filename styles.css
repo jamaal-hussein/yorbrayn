@@ -1,0 +1,249 @@
+/* Base */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Arial, Verdana, Tahoma, sans-serif;
+  background: #cfd8e6;
+  color: #1b1f2a;
+}
+
+/* Page container */
+.page {
+  width: 960px;
+  margin: 18px auto;
+  border: 1px solid #7a8aa6;
+  background: #eef3fb;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.20);
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-bottom: 1px solid #7a8aa6;
+  background: linear-gradient(#4e78b7, #2b4f86);
+  color: #fff;
+}
+
+/* Brand */
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand-badge {
+  width: 42px; height: 42px;
+  display: grid; place-items: center;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: linear-gradient(#ffffff, #b9d3ff);
+  color: #17325a;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+}
+.brand-title { font-size: 20px; font-weight: bold; letter-spacing: 0.4px; }
+.brand-sub { font-size: 12px; opacity: 0.9; margin-top: 2px; }
+
+/* Nav */
+.nav { display: flex; gap: 8px; }
+.navlink {
+  display: inline-block;
+  padding: 7px 10px;
+  text-decoration: none;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: linear-gradient(#3f6fb6, #234c85);
+  border-radius: 7px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.22);
+}
+.navlink:hover {
+  background: linear-gradient(#5f8fd8, #2b5aa0);
+}
+.navlink.active {
+  background: linear-gradient(#ffffff, #cfe2ff);
+  color: #17325a;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+}
+
+/* Hero */
+.hero {
+  padding: 14px 12px;
+  border-bottom: 1px solid #b3c0d8;
+  background: linear-gradient(#ffffff, #e8f0ff);
+}
+.hero-inner h1 { margin: 0 0 6px 0; font-size: 24px; color: #1b355f; }
+.hero-inner p { margin: 0; color: #3b4a66; }
+
+/* Layout */
+.layout {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+}
+.sidebar { width: 280px; }
+.content { flex: 1; }
+
+/* Panels/cards */
+.panel, .card {
+  border: 1px solid #a7b5cd;
+  background: #ffffff;
+  margin-bottom: 12px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.95);
+}
+.panel-title, .card-title {
+  padding: 8px 10px;
+  font-weight: bold;
+  color: #1b355f;
+  border-bottom: 1px solid #a7b5cd;
+  background: linear-gradient(#f7fbff, #dce9ff);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+}
+.panel-body, .card-body { padding: 10px; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #5578a8;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+  border-radius: 8px;
+  user-select: none;
+}
+.btn.full { width: 100%; text-align: center; }
+.btn.glossy {
+  color: #0f2a52;
+  background: linear-gradient(#ffffff, #b8d4ff);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.95), 0 1px 0 rgba(0,0,0,0.10);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+}
+.btn.glossy:hover { background: linear-gradient(#ffffff, #9fc5ff); }
+.btn.glossy:active { transform: translateY(1px); }
+.btn.alt {
+  background: linear-gradient(#ffffff, #d6dbe6);
+  border-color: #7a8aa6;
+}
+.btn.alt:hover { background: linear-gradient(#ffffff, #c7cedd); }
+
+/* Inputs */
+.textbox {
+  width: 100%;
+  padding: 8px 9px;
+  border: 1px solid #9eb0cc;
+  border-radius: 7px;
+  background: linear-gradient(#ffffff, #eef3fb);
+  outline: none;
+}
+.textbox:focus {
+  border-color: #5b86c7;
+  box-shadow: 0 0 0 3px rgba(91,134,199,0.20);
+}
+
+/* Quiz list rows */
+.quizrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #c9d4e6;
+  background: linear-gradient(#ffffff, #f2f7ff);
+  margin-bottom: 10px;
+}
+.quizname { font-weight: bold; color: #1b355f; }
+.quizmeta { font-size: 12px; color: #50607a; margin-top: 3px; }
+
+/* Text helpers */
+.muted { color: #50607a; }
+.small { font-size: 12px; }
+.note { margin-top: 10px; font-size: 12px; color: #55657f; }
+.hr { height: 1px; background: #d2dbea; margin: 10px 0; }
+
+.bullets { margin: 0; padding-left: 18px; }
+.bullets li { margin: 6px 0; }
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-top: 1px solid #b3c0d8;
+  background: linear-gradient(#f7fbff, #dce9ff);
+}
+
+/* Quiz cards */
+.qcard {
+  border: 1px solid #c9d4e6;
+  background: linear-gradient(#ffffff, #f3f8ff);
+  margin: 10px 0;
+  padding: 10px;
+}
+.qtitle { font-weight: bold; color: #1b355f; margin-bottom: 8px; }
+.qnum {
+  display: inline-block;
+  min-width: 28px;
+  text-align: center;
+  padding: 2px 6px;
+  border-radius: 8px;
+  background: linear-gradient(#ffffff, #cfe2ff);
+  border: 1px solid #a7b5cd;
+  margin-right: 6px;
+}
+.opts { display: grid; gap: 6px; }
+.opt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 8px;
+  border: 1px solid #d2dbea;
+  background: linear-gradient(#ffffff, #eef5ff);
+}
+.opt:hover { border-color: #a9bfe6; }
+.opt input { margin: 0 0 0 2px; }
+.opttext { font-size: 13px; }
+
+/* Actions */
+.actions { margin-top: 12px; display: flex; gap: 10px; }
+
+/* Grade boxes */
+.gradebox {
+  border: 1px solid #c9d4e6;
+  background: linear-gradient(#ffffff, #f3f8ff);
+  padding: 10px;
+}
+.grade-label { font-size: 12px; color: #50607a; }
+.grade-value {
+  font-size: 34px;
+  font-weight: bold;
+  color: #1b355f;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+}
+
+/* Result */
+.result {
+  margin-top: 12px;
+  border: 1px solid #a7b5cd;
+  background: linear-gradient(#ffffff, #eef3fb);
+  padding: 10px;
+}
+.result-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.result-big { font-size: 22px; font-weight: bold; color: #1b355f; }
+.result-msg { color: #3b4a66; }
+
+/* Review list */
+.review { margin-top: 10px; border-top: 1px solid #d2dbea; padding-top: 10px; }
+.review-row {
+  display: grid;
+  grid-template-columns: 48px 1fr 1fr;
+  gap: 10px;
+  align-items: start;
+  padding: 8px;
+  border: 1px solid #d2dbea;
+  margin-bottom: 8px;
+  background: #ffffff;
+}
+.review-row.ok { background: linear-gradient(#ffffff, #ecfff1); }
+.review-row.bad { background: linear-gradient(#ffffff, #ffecec); }
+.review-q { font-weight: bold; color: #1b355f; text-align: center; }
+.label { font-weight: bold; color: #50607a; }
