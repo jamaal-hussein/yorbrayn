@@ -6,27 +6,22 @@
 </head>
 <body>
   <div class="page">
-    <h1>Maths</h1>
-    <div id="list"></div>
+    <div class="layout">
+      <div class="content" id="list"></div>
+    </div>
   </div>
 
   <script src="quiz-engine.js"></script>
   <script>
-    QuizEngine.loadAllQuizzes().then(quizzes => {
-      const list = document.getElementById("list");
-      quizzes
-        .filter(q => q.subject === "Maths")
-        .forEach(q => {
-          list.innerHTML += `
-            <div class="card">
-              <strong>${q.name}</strong> (Year ${q.year})
-              <br>
-              <a class="btn glossy" href="quiz.html?name=${encodeURIComponent(q.name)}">
-                Start
-              </a>
-            </div>
-          `;
-        });
+    QuizEngine.load().then(qs => {
+      document.getElementById("list").innerHTML =
+        qs.filter(q => q.subject === "Maths").map(q => `
+          <div class="card">
+            <b>${q.name}</b> (Year ${q.year})
+            <br><br>
+            <a class="btn glossy" href="quiz.html?name=${encodeURIComponent(q.name)}">Start</a>
+          </div>
+        `).join("");
     });
   </script>
 </body>
