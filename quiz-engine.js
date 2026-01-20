@@ -11,7 +11,6 @@ const QuizEngine = (() => {
 
         if (line.startsWith("QUIZNAME:")) quiz.name = line.slice(9).trim();
         else if (line.startsWith("SUBJECT:")) quiz.subject = line.slice(8).trim();
-        else if (line.startsWith("YEAR:")) quiz.year = Number(line.slice(5).trim());
         else if (line.startsWith("KEY:")) {
           const [term, meaning] = line.slice(4).split("=");
           quiz.keywords.push({ term: term.trim(), meaning: meaning.trim() });
