@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>YORBRAYN</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-badge">YB</div>
+        <div class="brand-text">
+          <div class="brand-title">YORBRAYN</div>
+          <div class="brand-sub">quizzes • topics • grades saved on this device</div>
+        </div>
+      </div>
+
+      <div class="nav">
+        <a class="navlink active" href="index.html">Home</a>
+        <a class="navlink" href="topic-math.html">Math</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="hero-inner">
+        <h1>Pick a topic</h1>
+        <p>Click a topic to find quizzes. Use search inside the topic page.</p>
+      </div>
+    </div>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="panel">
+          <div class="panel-title">Quick Links</div>
+          <div class="panel-body">
+            <a class="btn glossy full" href="topic-math.html">Go to Math</a>
+            <div class="note">Your best grade is stored locally on this device.</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">Topics</div>
+          <div class="panel-body">
+            <ul class="bullets">
+              <li><a href="topic-math.html">Math</a></li>
+              <li class="muted">Other topics coming soon</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <main class="content">
+        <div class="card">
+          <div class="card-title">Featured</div>
+          <div class="card-body">
+            <div class="quizrow">
+              <div class="quizrow-left">
+                <div class="quizname">Direct &amp; Indirect Proportion</div>
+                <div class="quizmeta">Math • Year 8</div>
+              </div>
+              <div class="quizrow-right">
+                <a class="btn glossy" href="quiz-proportion.html">Start Quiz</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">News</div>
+          <div class="card-body">
+            <div class="muted">
+              Other topics are coming soon. Math is live right now.
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="footer">
+      <div>© <span id="yr"></span> YORBRAYN</div>
+      <div class="muted small">Made for GitHub Pages • works offline too</div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
