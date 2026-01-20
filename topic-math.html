@@ -1,14 +1,37 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>YORBRAYN • Maths</title>
+  <meta charset="utf-8">
+  <title>YORBRAYN • Math</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="page">
-    <div class="layout">
-      <div class="content" id="list"></div>
+
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-badge">YB</div>
+        <div>
+          <div class="brand-title">YORBRAYN</div>
+          <div class="brand-sub">Math quizzes</div>
+        </div>
+      </div>
+      <div class="nav">
+        <a class="navlink" href="index.html">Home</a>
+        <a class="navlink active" href="topic-math.html">Math</a>
+      </div>
     </div>
+
+    <div class="layout">
+      <main class="content" id="list">
+        Loading…
+      </main>
+    </div>
+
+    <div class="footer">
+      <div>© 2026 YORBRAYN</div>
+    </div>
+
   </div>
 
   <script src="quiz-engine.js"></script>
@@ -17,9 +40,12 @@
       document.getElementById("list").innerHTML =
         qs.filter(q => q.subject === "Maths").map(q => `
           <div class="card">
-            <b>${q.name}</b> (Year ${q.year})
-            <br><br>
-            <a class="btn glossy" href="quiz.html?name=${encodeURIComponent(q.name)}">Start</a>
+            <div class="card-title">${q.name} (Year ${q.year})</div>
+            <div class="card-body">
+              <a class="btn glossy" href="quiz.html?name=${encodeURIComponent(q.name)}">
+                Start
+              </a>
+            </div>
           </div>
         `).join("");
     });
