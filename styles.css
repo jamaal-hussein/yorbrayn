@@ -247,3 +247,13 @@ body {
 .review-row.bad { background: linear-gradient(#ffffff, #ffecec); }
 .review-q { font-weight: bold; color: #1b355f; text-align: center; }
 .label { font-weight: bold; color: #50607a; }
+
+.correct {
+  background: #d6ffd6;
+  border: 1px solid #3ca03c;
+}
+
+.wrong {
+  background: #ffd6d6;
+  border: 1px solid #c0392b;
+}
