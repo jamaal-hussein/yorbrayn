@@ -1,21 +1,40 @@
-QUIZNAME: Direct & Indirect Proportion
+QUIZNAME: Addition and Subtraction
 SUBJECT: Maths
-YEAR: 8
 
-KEY: Direct proportion = When one value increases, the other increases at the same rate
-KEY: Inverse proportion = When one value increases, the other decreases
-KEY: Constant = A number that does not change
-KEY: Workers = People doing a job together
-KEY: Speed = Distance travelled per unit of time
+KEY: Addition = Adding a number to another number
+KEY: Subtraction = Removing a number from another number
+KEY: + is the sign of Addition
 
-Q: If y is directly proportional to x and x doubles, what happens to y?
-A: It halves
-A: It stays the same
-CA: It doubles
-A: It becomes zero
+Q: What is Addition?
+A: Counting one number a specific amount of times
+A: Removing one number from another
+CA: Adding one number to another
 
-Q: 6 workers finish a job in 10 days. How long for 12 workers?
-A: 20 days
-A: 10 days
-A: 8 days
-CA: 5 days
+Q: 1+2=?
+CA: 3
+A: 12
+A: 21
+A: -1
+
+Q: 5+5=?
+A: 55
+A: 5
+CA: 10
+A: 0
+
+Q: What is Subtraction?
+A: Counting one number a specific amount of times
+CA: Removing one number from another
+A: Adding one number to another
+
+Q: 2-1=?
+A: 3
+CA: 1
+A: -1
+A: 21
+
+Q: 10-10=?
+CA: 0
+A: 1010
+A: 20
+A: -10
