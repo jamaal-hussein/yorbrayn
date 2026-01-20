@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>YORBRAYN Quiz</title>
+  <title>YORBRAYN • Quiz</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="page">
-    <div id="quizRoot"></div>
+    <div class="content" id="quizRoot"></div>
   </div>
 
   <script src="quiz-engine.js"></script>
   <script>
-    const quizName = new URLSearchParams(location.search).get("name");
-
-    QuizEngine.loadAllQuizzes().then(quizzes => {
-      const quiz = quizzes.find(q => q.name === quizName);
-      QuizEngine.renderQuizFlow(quiz);
+    const name = new URLSearchParams(location.search).get("name");
+    QuizEngine.load().then(qs => {
+      const quiz = qs.find(q => q.name === name);
+      QuizEngine.renderQuiz(quiz);
     });
   </script>
 </body>
