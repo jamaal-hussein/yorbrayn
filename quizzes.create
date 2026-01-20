@@ -1,7 +1,12 @@
 QUIZNAME: Direct & Indirect Proportion
 SUBJECT: Maths
 YEAR: 8
-KEYWORDS: direct proportion, inverse proportion, ratio, constant, workers, speed
+
+KEY: Direct proportion = When one value increases, the other increases at the same rate
+KEY: Inverse proportion = When one value increases, the other decreases
+KEY: Constant = A number that does not change
+KEY: Workers = People doing a job together
+KEY: Speed = Distance travelled per unit of time
 
 Q: If y is directly proportional to x and x doubles, what happens to y?
 A: It halves
@@ -14,9 +19,3 @@ A: 20 days
 A: 10 days
 A: 8 days
 CA: 5 days
-
-Q: If y is inversely proportional to x, what stays the same?
-A: y/x
-CA: x × y
-A: x − y
-A: x + y
