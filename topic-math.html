@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>YORBRAYN • Math</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-badge">YB</div>
+        <div class="brand-text">
+          <div class="brand-title">YORBRAYN</div>
+          <div class="brand-sub">Math topic</div>
+        </div>
+      </div>
+
+      <div class="nav">
+        <a class="navlink" href="index.html">Home</a>
+        <a class="navlink active" href="topic-math.html">Math</a>
+      </div>
+    </div>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="panel">
+          <div class="panel-title">Search quizzes</div>
+          <div class="panel-body">
+            <input id="search" class="textbox" type="text" placeholder="type to search..." />
+            <div class="note">Search filters as you type.</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">Other topics</div>
+          <div class="panel-body">
+            <div class="muted">Other topics coming soon</div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="content">
+        <div class="card">
+          <div class="card-title">Math quizzes</div>
+          <div class="card-body">
+            <div id="quizList"></div>
+            <div id="emptyState" class="muted" style="display:none; padding:10px 0;">
+              No quizzes match that search.
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="footer">
+      <div>© <span id="yr"></span> YORBRAYN</div>
+      <div class="muted small">Tip: click a quiz to start</div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    const quizzes = [
+      {
+        title: "Direct & Indirect Proportion",
+        level: "Year 8",
+        href: "quiz-proportion.html",
+        tags: ["proportion", "direct", "indirect", "ratio"]
+      }
+    ];
+
+    const list = document.getElementById('quizList');
+    const emptyState = document.getElementById('emptyState');
+    const search = document.getElementById('search');
+
+    function escapeHtml(s) {
+      return s.replace(/[&<>"']/g, (c) => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+      }[c]));
+    }
+
+    function render(items) {
+      list.innerHTML = "";
+      if (items.length === 0) {
+        emptyState.style.display = "block";
+        return;
+      }
+      emptyState.style.display = "none";
+
+      items.forEach(q => {
+        const el = document.createElement("div");
+        el.className = "quizrow";
+        el.innerHTML = `
+          <div class="quizrow-left">
+            <div class="quizname">${escapeHtml(q.title)}</div>
+            <div class="quizmeta">Math • ${escapeHtml(q.level)}</div>
+          </div>
+          <div class="quizrow-right">
+            <a class="btn glossy" href="${escapeHtml(q.href)}">Start</a>
+          </div>
+        `;
+        list.appendChild(el);
+      });
+    }
+
+    function filterQuizzes(term) {
+      const t = term.trim().toLowerCase();
+      if (!t) return quizzes;
+      return quizzes.filter(q => {
+        const hay = (q.title + " " + q.level + " " + q.tags.join(" ")).toLowerCase();
+        return hay.includes(t);
+      });
+    }
+
+    search.addEventListener("input", () => render(filterQuizzes(search.value)));
+    render(quizzes);
+  </script>
+</body>
+</html>
