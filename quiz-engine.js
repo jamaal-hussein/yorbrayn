@@ -12,9 +12,21 @@ const QuizEngine = (() => {
         if (line.startsWith("QUIZNAME:")) quiz.name = line.slice(9).trim();
         else if (line.startsWith("SUBJECT:")) quiz.subject = line.slice(8).trim();
         else if (line.startsWith("KEY:")) {
-          const [term, meaning] = line.slice(4).split("=");
-          quiz.keywords.push({ term: term.trim(), meaning: meaning.trim() });
+          const rest = line.slice(4).trim();
+          if (rest.includes("=")) {
+            const [term, meaning] = rest.split("=");
+            quiz.keywords.push({
+              term: term.trim(),
+              meaning: meaning.trim()
+            });
+          } else {
+            quiz.keywords.push({
+              term: rest.trim(),
+              meaning: ""
+            });
+          }
         }
+
         else if (line.startsWith("Q:")) {
           currentQ = { text: line.slice(2).trim(), answers: [], correct: null };
           quiz.questions.push(currentQ);
